@@ -1,0 +1,49 @@
+0429
+- 교수님이 BSP부분 조금 더 보완하라고 하심 BSP가 뭔지
+- UML 추가되었음 좋겠다고함 거의 마지막 상태패턴쪽에 
+- 오타 수정하고 더 멋있게 만들기
+- 
+
+
+https://www.youtube.com/watch?v=_TY0F7Zm6Lc&t=23s
+1. 오브젝트 타일맵 추가
+ - Tilemap Renderer
+  ㄴ mode > individual
+  ㄴ Sort Order > top right 
+2.window > 2D > tile palette 
+ ㄴ Name : 원하는거
+ ㄴ Grid : Isometric Z as Y
+ ㄴ Cell Size : Manual 밑에 1 0.5 1 설정
+ ㄴ create 
+3. 적용할 Textures 선택한 상태에서 아래 세팅
+- 인스펙터: 
+  ㄴ sprit mode 단일이미지면 single
+  ㄴ Pixels Per Unit > ex 이미지 파일이 1024 x면 1024그대로 입력
+  ㄴ Mesh Type > tight 
+  ㄴ WrapMode > clamp 
+  ㄴ compression > none 
+  ㄴ Max Size > 64(너무 높게하면 눈아픔 유튭에선 64하라함 취향인듯)
+
+5.사이즈 수정한 이미지들 파레트 창으로 옮기기
+6.유니티 겜 해상도 16:9 수정
+7. 공통 설정
+-  edit > 프로젝트 세팅 > 그래픽 > custorm axis > 0 1 0 (y축 기준으로 보기 2층탑 쌓을 때 테두리 벽 자연스럽게 쌓이게 할려고)
+
+8. 1층 그릴 때 설정법
+- 그리드 오브젝트 세팅 
+  ㄴ Cell Gap : -0.1, 0, 0 (셀간격 좁게)
+- Tile Map 오브젝트 세팅  
+ ㄴ Mode > chunk 에서 individual 로 수정 (메모리에 안 좋다고는함)
+ ㄴ 셀 찍을 때 타일이 커서보다 위에있는 문제 해결법 : Tile anchor : 0 0 0 
+ ㄴ 탑 라이트 설정
+ ㄴ 1층 그리기
+
+9. 2층 테두리 쌓기
+- 타일맵 오브젝트 새로 추가 설정은 동일하게 tile anchor 0 0 0
+- Mode > chunk 에서 individual 로 수정
+- 2층 Tile anchor 0 0 0 체크	
+- 바텀레프트
+- 레이어는 order in layer 값을 1층보다 높게 하거나 sorting layer 설정
+10 cndehf tjfwjd 
+Tilemap Colider 2D 추가 후 use MY composite 클릭 1층2층 모두 설정
+런타임 베이킹 - https://github.com/h8man/NavMeshPlus/wiki/HOW-TO

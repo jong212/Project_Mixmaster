@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - map2
+  - map3
+  - field
+  - mon
+  - team1
+  - team3
+  - team2
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - minimap
+  - Water
+  - UI
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: human
+    uniqueID: 2124026903
+    locked: 0
+  - name: monster
+    uniqueID: 2680947491
+    locked: 0
+  - name: effect
+    uniqueID: 598319473
+    locked: 0

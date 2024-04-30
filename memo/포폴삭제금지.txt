@@ -1,0 +1,197 @@
+https://sikpang.tistory.com/7 // 내비메시 길찾기
+https://wergia.tistory.com/225 // 내비메시 길찾기
+https://www.youtube.com/watch?v=CM61UST1gsQ // UML 공부영상
+https://www.youtube.com/watch?v=FdNervYWmcE // 몬스터 랜덤이동
+https://www.youtube.com/watch?v=g6-ZV5zBbBA //씬전환
+https://www.youtube.com/watch?v=_TY0F7Zm6Lc // 타일 그리기
+https://kimyir.tistory.com/45#1.%20%EC%A0%9C%EB%84%A4%EB%A6%AD%20%EB%A9%94%EC%84%9C%EB%93%9C(%ED%95%A8%EC%88%98)-1 // 제네릭 정리 
+ https://www.youtube.com/playlist?list=PLcRSafycjWFenI87z7uZHFv6cUG2Tzu9v //절차적 맵생성 04/11
+    - ##2D 프로텍트 중요한거 정리#####
+    - 9일 ~19 프로젝트 기간 
+    - 20 프젝한거 발표하면서 도식화를 이미지가 있는 문서 발표도 같이 함
+    - 문서는 아래 주제는 필수로 해서 만들기..
+      ㄴ 장르만들기
+      ㄴ 개발일정
+      ㄴ 도식화 이미지
+    - 23 24까지프젝한거 영상, 기술문서 다완성해야함 기술문서랑 20일날 발표문서랑 달름
+
+    - DrawCall 줄여라
+    - Destroy 안 좋으니까 자제해라
+    - 씬 단위로 관리를 해라  (인게임 씬, 끝나는 씬, 등)
+    - 폴더링 잘해라
+    - C# 많이 써라 인터페이스,추상화
+
+    - 발표하고나서 기술문서랑 동영상 바로 작성해라
+
+
+    - 만약 총겜이라면 총알 나가는건 무조건 풀링
+      > 풀링은 매니저화 시켜서
+      > 꼭 슈팅겜이 아니더라도 데이터가 빈번하게 발생하는 것은 풀링
+
+    - 스크립트 최적화
+    - 물리엔진 최적화 (물리연산을 안 할거면 static )
+
+■ 게임 소개
+- 필드위 몬스터를 처치하여 육성하는 rpg게임 
+
+■ 작업 일정
+9 ~ 11 : 메시, raycast 를 활용하여 플레이어와 몬스터의 전투가 가능하게 하기
+12 ~ 13 : 맵 구성
+14 ~ 15 : 8방향 애니메이션 처리 (기본, 뛰기, 공격, 사망) 
+16 : 사운드 작업
+17 : 추가 작업할 기능 있으면 구현
+18 : 기능 테스트 1차
+19 : 최종테스트
+■ 구현 기능
+
+[이동 방식]  
+- 마우스 클릭으로 캐릭 움직이도록 구현합니다.
+  ㄴ 필요 기능 : Astar, NavMeshAgent, agent.destinatio
+
+[맵]
+- 맵을 생성하는 방식 자체는 고민을 더 해봐야 합니다. (수동으로 만들어 놓을지... 자동으로 만들게 할지 )
+- 맵 디자인은 입체감이 느껴지도록 isometric를 사용합니다.
+- 맵은 전투맵과 비전투맵으로 구분하며 사냥터와 마을입니다.
+
+[능력치]
+- 캐릭터와 몬스터는 능력치에 따라 강함의 정도가 달라집니다.
+
+■ 코드 다이어그램
+
+[초기화]  https://glikmakesworld.tistory.com/2,   https://www.youtube.com/watch?v=G4Eu8zUXg-E&t=14s // 유니티 싱글톤
+- 게임 최초 실행 GameManager를 init 하도록 구현.
+  ㄴ init 단계에서는  GameManager는 겜매니저 포함 전투매니저,무브매니저,능력치메니저들을 초기 하도록 구현
+  	
+[매니저 구성]
+- 전투 매니저
+  ㄴ 해당 매니저는 플레이어 혹은 몬스터가 상호간에 전투가 일어났을 때에만 타도록 해야함
+  ㄴ 전투가 시작되면....
+     ㄴ 무브, 공격, 애니메이션, 능력치 관련 데이터를 받아오고 처리하는 로직을 함수로 구분해서 설게해야 함 
+  ㄴ DB매니저에서 몬스터의 정보를 받아오면 이 몬스터가 선공을 하는 몬스터인지 아닌지를 알 수 있는 값이 있어야함
+  ㄴ DB에서 능력치들 가져와서 
+  ㄴ 적, 플레이어 공격  감지 기능 필요
+
+- Move 매니저
+  ㄴ 움직임 관련한 동작들은 이벤트를 실행시켜서 Move매니저 타도록 구현
+  ㄴ 비전투 상황에 몬스터 움직임 :필드 위에서 자동으로 몬스터가 움직이도록 구현
+  ㄴ 상황에 따른 움직임...  플레이어가 멀리 있는 위치에서 몬스터를 클릭 했을 때 전투를 위해 다가가도록
+      ㄴ 몬스터의 영역을 침범한 경우 플레이어에게 달려들도록(NavMeshAgent) -> 침범했다면 > 플레이어의 position값을 계속 받아오기만 하면 나머지는 navmesh가처리
+      ㄴ (몬스터 클릭) ? navmesh'astar' + raycast :  agent.destinatio // 멀리 있는 위치에서도 적에게 다가감 : 해당 좌표로 그냥 이동함
+    
+- 능력치 매니저
+  ㄴ player, monster 능력치관리    
+
+
+
+
+
+navigate.cs 백업
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.AI;
+
+public class Navigate : MonoBehaviour
+{
+    private NavMeshAgent agent;
+    public bool showPath;
+    public bool showAhead;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        agent = GetComponent<NavMeshAgent>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetMouseButtonUp(0))
+        {
+            var target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+           target.z = 0;
+             agent.destination = target;
+            // 마우스 위치에서 화면 상의 Ray를 생성
+            // Get the mouse position in world coordinates
+            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mousePosition.z = 0; // Ensure the z-coordinate is at the same level as the 2D plane
+
+            // Calculate the direction vector from the player to the mouse position
+            Vector3 direction = (mousePosition - transform.position).normalized;
+
+            // Calculate the distance from the player to the mouse position
+            float distanceToMouse = Vector3.Distance(transform.position, mousePosition);
+
+            // Perform the raycast with the limited distance
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, distanceToMouse);
+
+            // Check if the raycast hits anything
+            if (hit.collider != null)
+            {
+                // Draw the laser up to the hit point
+                Debug.DrawLine(transform.position, hit.point, Color.red);
+                Debug.Log("Hit object: " + hit.collider.gameObject.name);
+                Debug.Log("Hit point: " + hit.point);
+            }
+            else
+            {
+                // Draw the laser up to the mouse position
+                Debug.DrawLine(transform.position, mousePosition, Color.blue);
+                Debug.Log("No hit detected.");
+            }
+        }
+
+
+    }
+    public static void DebugDrawPath(Vector3[] corners)
+    {
+        if (corners.Length < 2) { return; }
+        int i = 0;
+        for (; i < corners.Length - 1; i++)
+        {
+            Debug.DrawLine(corners[i], corners[i + 1], Color.blue);
+        }
+        Debug.DrawLine(corners[0], corners[1], Color.red);
+    }
+
+    private void OnDrawGizmos()
+    {
+       DrawGizmos(agent, showPath, showAhead);
+    }
+
+    public static void DrawGizmos(NavMeshAgent agent, bool showPath, bool showAhead)
+    {
+        if (Application.isPlaying && agent != null)
+        {
+            if (showPath && agent.hasPath)
+            {
+                var corners = agent.path.corners;
+                if (corners.Length < 2) { return; }
+                int i = 0;
+                for (; i < corners.Length - 1; i++)
+                {
+                    Debug.DrawLine(corners[i], corners[i + 1], Color.blue);
+                    Gizmos.color = Color.blue;
+                    Gizmos.DrawSphere(agent.path.corners[i + 1], 0.03f);
+                    Gizmos.color = Color.blue;
+                    Gizmos.DrawLine(agent.path.corners[i], agent.path.corners[i + 1]);
+                }
+                Debug.DrawLine(corners[0], corners[1], Color.blue);
+                Gizmos.color = Color.red;
+                Gizmos.DrawSphere(agent.path.corners[1], 0.03f);
+                Gizmos.color = Color.red;
+                Gizmos.DrawLine(agent.path.corners[0], agent.path.corners[1]);
+            }
+
+            if (showAhead)
+            {
+                Gizmos.color = Color.yellow;
+                Gizmos.DrawRay(agent.transform.position, agent.transform.up * 0.5f);
+            }
+        }
+    }
+}
+
+
+

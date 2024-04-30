@@ -1,0 +1,743 @@
+fileFormatVersion: 2
+guid: 87565e73a43e4d84b9585c0473c89dff
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Getup_19
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 45
+        height: 70
+      alignment: 9
+      pivot: {x: 0.7894555, y: 0.20247944}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10fc4815b01a576e0800000000000000
+      internalID: -1840387802726609151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Getup_15
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 0
+        width: 55
+        height: 66
+      alignment: 9
+      pivot: {x: 0.8459181, y: 0.26020548}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98fe680e2a3b77df0800000000000000
+      internalID: -182479747752202359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Getup_18
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 0
+        width: 53
+        height: 64
+      alignment: 9
+      pivot: {x: 0.80236787, y: 0.20583689}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d50f59161fcf47b60800000000000000
+      internalID: 7743091773011259485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Getup_14
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 0
+        width: 52
+        height: 62
+      alignment: 9
+      pivot: {x: 0.8562596, y: 0.29312196}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3f97d766a42e7990800000000000000
+      internalID: -7386426041715679430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Getup_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 70
+        width: 54
+        height: 62
+      alignment: 9
+      pivot: {x: 0.7689907, y: 0.05118647}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0f7e34f085a418e0800000000000000
+      internalID: -1723570784103923953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Getup_22
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 70
+        width: 55
+        height: 61
+      alignment: 9
+      pivot: {x: 0.57319087, y: 0.06841903}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d6676a52e0001270800000000000000
+      internalID: 8219070292130490066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Getup_23
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 0
+        width: 50
+        height: 61
+      alignment: 9
+      pivot: {x: 0.51050997, y: 0.08481248}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae9fd19975f670400800000000000000
+      internalID: 290323123010402794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Getup_13
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 70
+        width: 53
+        height: 60
+      alignment: 9
+      pivot: {x: 0.84010375, y: 0.33622602}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a7b9ce239376f660800000000000000
+      internalID: 7419244512121829284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Getup_21
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 70
+        width: 60
+        height: 60
+      alignment: 9
+      pivot: {x: 0.7587583, y: 0.052892685}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c30ef7598b1792b20800000000000000
+      internalID: 3110142055272144956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Getup_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 132
+        width: 52
+        height: 59
+      alignment: 9
+      pivot: {x: 0.817798, y: 0.3588739}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04c36ea8c2ff20f90800000000000000
+      internalID: -6988743104951600064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Getup_24
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 132
+        width: 50
+        height: 58
+      alignment: 9
+      pivot: {x: 0.51050997, y: 0.054716572}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f0a409207e299a00800000000000000
+      internalID: 763692671075393782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Getup_25
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 132
+        width: 49
+        height: 58
+      alignment: 9
+      pivot: {x: 0.5209285, y: 0.054716572}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 979cf871e9b7dd570800000000000000
+      internalID: 8493080391220971897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Getup_26
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 132
+        width: 49
+        height: 58
+      alignment: 9
+      pivot: {x: 0.5209285, y: 0.054716572}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8a299c02257d9cc0800000000000000
+      internalID: -3702674529527977331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Getup_16
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 132
+        width: 56
+        height: 57
+      alignment: 9
+      pivot: {x: 0.83081245, y: 0.24865897}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4854ab22fd75c88e0800000000000000
+      internalID: -1689879144298822268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Getup_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 191
+        width: 56
+        height: 55
+      alignment: 9
+      pivot: {x: 0.8129553, y: 0.36679202}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3882b897d45d4f2c0800000000000000
+      internalID: -4398656407305770877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Getup_2
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 191
+        width: 71
+        height: 54
+      alignment: 9
+      pivot: {x: 0.44402108, y: 0.33654743}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da6026eab2314f380800000000000000
+      internalID: -8938498282093410643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Getup_17
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 191
+        width: 59
+        height: 54
+      alignment: 9
+      pivot: {x: 0.8224661, y: 0.16988076}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7e607b6fc90e1eb0800000000000000
+      internalID: -4747346170736513409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Getup_7
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 191
+        width: 61
+        height: 50
+      alignment: 9
+      pivot: {x: 0.7627131, y: 0.28347123}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d58d1156af7086af0800000000000000
+      internalID: -403063394630772643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Getup_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 246
+        width: 61
+        height: 49
+      alignment: 9
+      pivot: {x: 0.8118934, y: 0.28925633}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edfd751ee51dec770800000000000000
+      internalID: 8633067741153583070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Getup_10
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 246
+        width: 59
+        height: 49
+      alignment: 9
+      pivot: {x: 0.8224661, y: 0.35048082}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be932147661dff130800000000000000
+      internalID: 3602828464883907051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Getup_3
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 246
+        width: 55
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5368272, y: 0.2952825}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69b50f4e757b5f060800000000000000
+      internalID: 6986691985066187670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Getup_9
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 246
+        width: 61
+        height: 48
+      alignment: 9
+      pivot: {x: 0.8118934, y: 0.2952825}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b0a8bfa6a89e17f0800000000000000
+      internalID: -639906255359926096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Getup_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 295
+        width: 99
+        height: 47
+      alignment: 9
+      pivot: {x: 0.31843936, y: 0.5356077}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb508d11803449ef0800000000000000
+      internalID: -102383189584509508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Getup_6
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 295
+        width: 62
+        height: 47
+      alignment: 9
+      pivot: {x: 0.70202416, y: 0.25901192}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00386b0ee31f21f90800000000000000
+      internalID: -6984254819737894144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Getup_4
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 295
+        width: 50
+        height: 41
+      alignment: 9
+      pivot: {x: 0.51050997, y: 0.29691613}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78b757dab2977e560800000000000000
+      internalID: 7342970945951595399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Getup_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 342
+        width: 53
+        height: 41
+      alignment: 9
+      pivot: {x: 0.5948207, y: 0.22374539}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a55945aed04692b40800000000000000
+      internalID: 5415970037818496346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Getup_1
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 342
+        width: 93
+        height: 40
+      alignment: 9
+      pivot: {x: 0.34973654, y: 0.47933903}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab8e390631b53eaa0800000000000000
+      internalID: -6132958128765671238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures:
+    - texture: {fileID: 2800000, guid: c25e5fe47656767429bcdc9096762bc3, type: 3}
+      name: _NormalMap
+    nameFileIdTable:
+      Getup_0: -102383189584509508
+      Getup_1: -6132958128765671238
+      Getup_10: 3602828464883907051
+      Getup_11: -4398656407305770877
+      Getup_12: -6988743104951600064
+      Getup_13: 7419244512121829284
+      Getup_14: -7386426041715679430
+      Getup_15: -182479747752202359
+      Getup_16: -1689879144298822268
+      Getup_17: -4747346170736513409
+      Getup_18: 7743091773011259485
+      Getup_19: -1840387802726609151
+      Getup_2: -8938498282093410643
+      Getup_20: -1723570784103923953
+      Getup_21: 3110142055272144956
+      Getup_22: 8219070292130490066
+      Getup_23: 290323123010402794
+      Getup_24: 763692671075393782
+      Getup_25: 8493080391220971897
+      Getup_26: -3702674529527977331
+      Getup_3: 6986691985066187670
+      Getup_4: 7342970945951595399
+      Getup_5: 5415970037818496346
+      Getup_6: -6984254819737894144
+      Getup_7: -403063394630772643
+      Getup_8: 8633067741153583070
+      Getup_9: -639906255359926096
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

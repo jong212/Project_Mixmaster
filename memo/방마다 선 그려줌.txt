@@ -1,0 +1,258 @@
+using System.Collections;
+using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEngine;
+using UnityEngine.Experimental.GlobalIllumination;
+using UnityEngine.Tilemaps;
+using UnityEngine.UIElements;
+
+public class CreateMap : MonoBehaviour
+{
+    MapTree map;
+    [SerializeField]
+    public Vector2Int mapSize;
+    [SerializeField]
+    Tilemap tilemap;
+
+    [SerializeField]
+    TileBase tileBase1;
+
+    [SerializeField]
+    TileBase tileBase2;
+
+    [SerializeField]
+    TileBase tileBase3;
+
+    [SerializeField]
+    TileBase tileBase4;
+
+    [SerializeField]
+    TileBase tileBase5;
+
+    [SerializeField]
+    TileBase tileBase6;
+
+    private void Awake()
+    {
+        map = new MapTree(mapSize);
+        var roomList = map.GetLastNode();
+
+        GenerationRoute();
+
+        foreach (var room in roomList)
+        {
+            TileBase tileBase;
+            int r = Random.Range(1, 7);
+            switch (r)
+            {
+                case 1:
+                    tileBase = tileBase1;
+                    break;
+                case 2:
+                    tileBase = tileBase2;
+                    break;
+                case 3:
+                    tileBase = tileBase3;
+                    break;
+                case 4:
+                    tileBase = tileBase4;
+                    break;
+                case 5:
+                    tileBase = tileBase5;
+                    break;
+                default:
+                    tileBase = tileBase6;
+                    break;
+            }
+
+            // Calculate room size based on a fixed ratio of partitioned area's width and height
+            int roomWidth = Mathf.RoundToInt(room.data.width * 0.8f);
+            int roomHeight = Mathf.RoundToInt(room.data.height * 0.8f);
+
+            // Calculate room position at the center of the partitioned area
+            int offsetX = Mathf.RoundToInt((room.data.width - roomWidth) / 2f);
+            int offsetY = Mathf.RoundToInt((room.data.height - roomHeight) / 2f);
+
+            for (int h = room.data.position.y + offsetY; h < room.data.position.y + offsetY + roomHeight; h++)
+            {
+                for (int w = room.data.position.x + offsetX; w < room.data.position.x + offsetX + roomWidth; w++)
+                {
+                    tilemap.SetTile(new Vector3Int(w, h, 0), tileBase);
+                }
+            }
+        }
+
+        
+
+    }
+
+    public void GenerationRoute()
+    {
+        var data = map.map.GetNearNodes();
+        foreach (List<MapNode> node in data)
+        {
+            var temp1 = new Vector2Int((int)node[0].data.center.x, (int)node[0].data.center.y);
+            var temp2 = new Vector2Int((int)node[1].data.center.x, (int)node[1].data.center.y);
+            DrawLine(temp1, temp2);
+        }
+    }
+    // Draw a straight line between two points
+    void DrawLine(Vector2Int start, Vector2Int end)
+    {
+        int x1 = start.x;
+        int y1 = start.y;
+        int x2 = end.x;
+        int y2 = end.y;
+
+        if (x1 == x2) // Vertical line
+        {
+            int minY = Mathf.Min(y1, y2);
+            int maxY = Mathf.Max(y1, y2);
+            for (int y = minY; y <= maxY; y++)
+            {
+                tilemap.SetTile(new Vector3Int(x1, y, 0), tileBase1);
+                tilemap.SetTile(new Vector3Int(x1+1, y, 0), tileBase1);
+            }
+        }
+        else if (y1 == y2) // Horizontal line
+        {
+            int minX = Mathf.Min(x1, x2);
+            int maxX = Mathf.Max(x1, x2);
+            for (int x = minX; x <= maxX; x++)
+            {
+                tilemap.SetTile(new Vector3Int(x, y1, 0), tileBase1);
+                tilemap.SetTile(new Vector3Int(x, y1+1, 0), tileBase1);
+            }
+        }
+        else // Right angle
+        {
+            int minX = Mathf.Min(x1, x2);
+            int maxX = Mathf.Max(x1, x2);
+            int minY = Mathf.Min(y1, y2);
+            int maxY = Mathf.Max(y1, y2);
+            for (int x = minX; x <= maxX; x++)
+            {
+                tilemap.SetTile(new Vector3Int(x, y1, 0), tileBase1);
+                tilemap.SetTile(new Vector3Int(x, y1+1, 0), tileBase1);
+            }
+            for (int y = minY; y <= maxY; y++)
+            {
+                tilemap.SetTile(new Vector3Int(x2, y, 0), tileBase1);
+                tilemap.SetTile(new Vector3Int(x2+1, y, 0), tileBase1);
+            }
+        }
+    }
+}
+
+public class MapTree
+{
+    public Vector2Int mapSize;
+    public MapNode map;
+
+    public MapTree(Vector2Int size)
+    {
+        mapSize = size;
+        map = new MapNode(new RectInt(new Vector2Int(0, 0), mapSize));
+        map.divideMap();
+    }
+    public List<MapNode> GetLastNode()
+    {
+        return map.GetLastNode();
+    }
+}
+public class MapNode
+{
+    public RectInt data;
+    public MapNode left;
+    public MapNode right;
+    public MapNode(RectInt ri)
+    {
+        data = ri;
+    }
+    public void divideMap()
+    {
+        if (data.width <= 50 && data.height <= 50)
+            return;
+
+        RectInt leftRect;
+        RectInt rightRect;
+
+        if (data.width >= data.height)
+        {
+            int length = data.width / 3;
+            var width = Random.Range(length, length * 2);
+            leftRect = new RectInt(data.position, new Vector2Int(width, data.height));
+            rightRect = new RectInt(new Vector2Int(data.position.x + width, data.position.y), new Vector2Int(data.width - width, data.height));
+        }
+        else
+        {
+            int length = data.height / 3;
+            var height = Random.Range(length, length * 2);
+            leftRect = new RectInt(data.position, new Vector2Int(data.width, height));
+            rightRect = new RectInt(new Vector2Int(data.position.x, data.position.y + height), new Vector2Int(data.width, data.height - height));
+        }
+        left = new MapNode(leftRect);
+        right = new MapNode(rightRect);
+        left.divideMap();
+        right.divideMap();
+    }
+    public List<MapNode> GetLastNode()
+    {
+        List<MapNode> mapNodes = new List<MapNode>();
+        if (left != null)
+            mapNodes.AddRange(left.GetLastNode());
+        if (right != null)
+            mapNodes.AddRange(right.GetLastNode());
+        if (left == null && right == null)
+            mapNodes.Add(this);
+        return mapNodes;
+    }
+    public List<List<MapNode>> GetNearNodes()
+    {
+        if (left == null && right == null)
+            return null;
+        var leftList = left.GetLastNode();
+        var rightList = right.GetLastNode();
+
+        MapNode node1 = null;
+        MapNode node2 = null;
+
+        List<MapNode> nearPair = new List<MapNode>();
+
+        float gap = float.MaxValue;
+
+        foreach (var lNode in leftList)
+        {
+            foreach (var rNode in rightList)
+            {
+                //float tempGap = CalculateGap(lNode.mapRect, rNode.mapRect);
+                float tempGap = CalculateDistance(lNode.data, rNode.data);
+                if (gap > tempGap)
+                {
+                    node1 = lNode;
+                    node2 = rNode;
+                    gap = tempGap;
+                }
+            }
+        }
+        nearPair.Add(node1);
+        nearPair.Add(node2);
+
+
+
+        var PairList = new List<List<MapNode>>() { nearPair };
+
+        var leftTemp = left.GetNearNodes();
+        var rightTemp = right.GetNearNodes();
+        if (leftTemp != null)
+            PairList.AddRange(leftTemp);
+        if (rightTemp != null)
+            PairList.AddRange(rightTemp);
+
+        return PairList;
+    }
+    private float CalculateDistance(RectInt rectA, RectInt rectB)
+    {
+        return new Vector2(Mathf.Abs(rectA.center.x - rectB.center.x), Mathf.Abs(rectA.center.y - rectB.center.y)).magnitude;
+    }
+}

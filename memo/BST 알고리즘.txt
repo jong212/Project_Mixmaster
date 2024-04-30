@@ -1,0 +1,140 @@
+using System.Collections;
+using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEngine;
+using UnityEngine.Tilemaps;
+using UnityEngine.UIElements;
+
+public class createMap : MonoBehaviour
+{
+    MapTree map;
+    [SerializeField]
+    public Vector2Int mapSize;
+    [SerializeField]
+    Tilemap tilemap;
+
+    [SerializeField]
+    TileBase tileBase1;
+
+    [SerializeField]
+    TileBase tileBase2;
+
+    [SerializeField]
+    TileBase tileBase3;
+
+    [SerializeField]
+    TileBase tileBase4;
+
+    [SerializeField]
+    TileBase tileBase5;
+
+    [SerializeField]
+    TileBase tileBase6;
+
+    private void Awake()
+    {
+        map = new MapTree(mapSize);
+        var roomList = map.GetLastNode();
+
+        foreach (var room in roomList)
+        {
+            TileBase tileBase;
+            int r = Random.Range(1, 7);
+            switch (r)
+            {
+                case 1:
+                    tileBase = tileBase1;
+                    break;
+                case 2:
+                    tileBase = tileBase2;
+                    break;
+                case 3:
+                    tileBase = tileBase3;
+                    break;
+                case 4:
+                    tileBase = tileBase4;
+                    break;
+                case 5:
+                    tileBase = tileBase5;
+                    break;
+                default:
+                    tileBase = tileBase6;
+                    break;
+            }
+
+            for (int h = room.data.position.y; h < room.data.height + room.data.position.y; h++)
+            {
+                for (int w = room.data.position.x; w < room.data.width + room.data.position.x; w++)
+                {
+                    tilemap.SetTile(new Vector3Int(w, h, 0), tileBase);
+                }
+            }
+        }
+    }
+}
+
+public class MapTree
+{
+    public Vector2Int mapSize;
+    MapNode map;
+
+    public MapTree(Vector2Int size)
+    {
+        mapSize = size;
+        map = new MapNode(new RectInt(new Vector2Int(0, 0), mapSize));
+        map.divideMap();
+    }
+    public List<MapNode> GetLastNode()
+    {
+        return map.GetLastNode();
+    }
+}
+public class MapNode
+{
+    public RectInt data;
+    public MapNode left;
+    public MapNode right;
+    public MapNode(RectInt ri)
+    {
+        data = ri;
+    }
+    public void divideMap()
+    {
+        if (data.width <= 50 && data.height <= 50 )
+            return;
+
+        RectInt leftRect;
+        RectInt rightRect;
+
+        if (data.width >= data.height)
+        {
+            int length = data.width / 3;
+            var width = Random.Range(length, length * 2);
+            leftRect = new RectInt(data.position, new Vector2Int(width, data.height));
+            rightRect = new RectInt(new Vector2Int(data.position.x + width, data.position.y), new Vector2Int(data.width - width, data.height));
+        }
+        else
+        {
+            int length = data.height / 3;
+            var height = Random.Range(length, length * 2);
+            leftRect = new RectInt(data.position, new Vector2Int(data.width, height));
+            rightRect = new RectInt(new Vector2Int(data.position.x, data.position.y + height), new Vector2Int(data.width, data.height - height));
+        }
+        left = new MapNode(leftRect);
+        right = new MapNode(rightRect);
+        left.divideMap();
+        right.divideMap();
+    }
+    public List<MapNode> GetLastNode()
+    {
+        List<MapNode> mapNodes = new List<MapNode>();
+        if (left != null)
+            mapNodes.AddRange(left.GetLastNode());
+        if (right != null)
+            mapNodes.AddRange(right.GetLastNode());
+        if (left == null && right == null)
+            mapNodes.Add(this);
+        return mapNodes;
+    }
+}
+
