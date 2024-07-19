@@ -1,3 +1,5 @@
+https://jonghwa0212.atlassian.net/wiki/x/zgEs
+
 장르 : 캐주얼 (쿠키런 모헙의 탑 모작)
 
 게임 특징 : 뭉치면 더 즐거운 캐주얼 협동 액션 게임
