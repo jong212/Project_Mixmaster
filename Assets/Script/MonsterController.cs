@@ -69,7 +69,7 @@ public class MonsterController : Unit
     private NavMeshAgent agent;
     public NavMeshAgent Agent { get { return agent; } }
     public Animator animator { get; private set; }
-
+    private Statusinfo statusinfo;
    
     public StateMachine<MonsterController> stateMachine;
     public bool idlestate = false;
@@ -112,7 +112,6 @@ public class MonsterController : Unit
         //info = GetComponent<monsterinfo>();
         stateMachine = new StateMachine<MonsterController>();
         stateMachine.ChangeState(new IdleState(), this);
-
         // Debug log to check if agent is initialized properly
         if (agent == null)
         {
@@ -129,6 +128,10 @@ public class MonsterController : Unit
         healthBar.UpdateHealthBar(hp, maxhealth);
         if(hp < 0)
         {
+            Statusinfo statusinfo = GameObject.FindGameObjectWithTag("Player").GetComponent<Statusinfo>();
+
+            if (statusinfo != null) statusinfo.hp = 1000;
+            if (statusinfo != null) statusinfo.Maxhealth = 1000;
             stateMachine.ChangeState(new DeadState(), this);    
         }
     }

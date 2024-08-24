@@ -341,7 +341,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40a6214d1de2b99449904dc816ba731b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapSize: {x: 200, y: 200}
+  mapSize: {x: 100, y: 100}
   tilemap: {fileID: 993505025}
   tilemapWall: {fileID: 1825134555}
   tilemapWall1: {fileID: 2006289744}

@@ -17,7 +17,7 @@ public class GameDB : Singleton<GameDB>
     //데이터 세팅
     private void InitializeMonsterData()
     {
-        AddMonster("mon1", new MonsterData("Monster1", 1, 500, 10,"S",0));
+        AddMonster("mon1", new MonsterData("Monster1", 1, 100, 10,"S",0));
         AddMonster("mon2", new MonsterData("Monster2", 2, 200, 20,"L",10));
         AddMonster("mon3", new MonsterData("Monster3", 3, 300, 30,"L",20));
         AddMonster("mon4", new MonsterData("Monster4", 4, 400, 40,"L",30));
@@ -28,10 +28,10 @@ public class GameDB : Singleton<GameDB>
         AddMonster("mon9", new MonsterData("Monster9", 9, 900, 90, "L", 80));
         AddMonster("mon10", new MonsterData("Monster10", 10, 1000, 100, "L", 90));
 
-        AddTeam("team1", new TeamData("team1monster", 1, 1000, 10, "L", 90,true));
-        AddTeam("team2", new TeamData("team2monster", 2, 1000, 100, "L", 90, true));
-        AddTeam("team3", new TeamData("team3monster", 3, 1000, 100, "L", 90, true));
-        AddPlayer("Player", new PlayerData("Hi", 1, 100, 100));
+        AddTeam("team1", new TeamData("team1monster", 1, 50, 100, "L", 90,true));
+        AddTeam("team2", new TeamData("team2monster", 2, 100, 100, "L", 90, true));
+        AddTeam("team3", new TeamData("team3monster", 3, 200, 100, "L", 90, true));
+        AddPlayer("Player", new PlayerData("Hi", 1, 50, 1000));
     }
 
     public void AddMonster(string monsterID, MonsterData monsterData)
