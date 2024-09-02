@@ -21,7 +21,7 @@ public class GameDB : Singleton<GameDB>
         AddMonster("mon2", new MonsterData("Monster2", 2, 200, 20,"L",10));
         AddMonster("mon3", new MonsterData("Monster3", 3, 300, 30,"L",20));
         AddMonster("mon4", new MonsterData("Monster4", 4, 400, 40,"L",30));
-        AddMonster("mon5", new MonsterData("Monster5", 5, 500, 50,"L",40));
+        AddMonster("mon5", new MonsterData("Monster5", 5, 5000, 50,"L",40));
         AddMonster("mon6", new MonsterData("Monster6", 6, 600, 60,"L", 50));
         AddMonster("mon7", new MonsterData("Monster7", 7, 700, 70, "L", 60));
         AddMonster("mon8", new MonsterData("Monster8", 8, 800, 80, "L", 70));
@@ -140,7 +140,7 @@ public class PlayerData
     public int str;
     public float health;
 
-    public PlayerData(string name, int level, float health, int str)
+    public PlayerData(string name, int level, int str ,float health)
     {
         this.name = name;
         this.level = level;

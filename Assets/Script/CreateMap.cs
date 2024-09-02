@@ -270,7 +270,7 @@ public class CreateMap : MonoBehaviour
         float distance = Vector3.Distance(startPos, endPos);
         int segmentCount = Mathf.CeilToInt(distance);
 
-        Vector3 step = (endPos - startPos) / segmentCount;
+        Vector3 step = (endPos - startPos) / segmentCount   
 
         for (int i = 0; i < segmentCount; i++)
         {
