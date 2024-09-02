@@ -21,12 +21,6 @@ public class GameDB : Singleton<GameDB>
         AddMonster("mon2", new MonsterData("Monster2", 2, 200, 20,"L",10));
         AddMonster("mon3", new MonsterData("Monster3", 3, 300, 30,"L",20));
         AddMonster("mon4", new MonsterData("Monster4", 4, 400, 40,"L",30));
-        AddMonster("mon5", new MonsterData("Monster5", 5, 5000, 50,"L",40));
-        AddMonster("mon6", new MonsterData("Monster6", 6, 600, 60,"L", 50));
-        AddMonster("mon7", new MonsterData("Monster7", 7, 700, 70, "L", 60));
-        AddMonster("mon8", new MonsterData("Monster8", 8, 800, 80, "L", 70));
-        AddMonster("mon9", new MonsterData("Monster9", 9, 900, 90, "L", 80));
-        AddMonster("mon10", new MonsterData("Monster10", 10, 1000, 100, "L", 90));
 
         AddTeam("team1", new TeamData("team1monster", 1, 50, 100, "L", 90,true));
         AddTeam("team2", new TeamData("team2monster", 2, 100, 100, "L", 90, true));

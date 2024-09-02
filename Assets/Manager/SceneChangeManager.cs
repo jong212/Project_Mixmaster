@@ -129,12 +129,10 @@ public class SceneChangeManager : Singleton<SceneChangeManager>
                     if (sceneToLoad != "map1")
                     {
                         //프리팹 생성 요기서 세팅을
-                        ObjectPool.Instance.CreateInstance("mon1", null, 7);
-                        ObjectPool.Instance.CreateInstance("mon2", null, 7);
-                        ObjectPool.Instance.CreateInstance("mon3", null, 7);
+                        ObjectPool.Instance.CreateInstance("mon1", null, 10);
+                        ObjectPool.Instance.CreateInstance("mon2", null, 10);
+                        ObjectPool.Instance.CreateInstance("mon3", null, 10);
                         ObjectPool.Instance.CreateInstance("mon4", null,1);
-                        ObjectPool.Instance.CreateInstance("mon5", null, 1);
-                        ObjectPool.Instance.CreateInstance("mon6", null, 5);
 
 
                         //GameObject monster = ObjectPool.Instance.GetInactiveObject("mon1");
